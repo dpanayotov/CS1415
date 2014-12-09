@@ -1,0 +1,14 @@
+digraph {
+
+	0 -> 1 [label="a"];
+	0 -> 1 [label="b"];
+	1 -> 2 [label="c"];
+	2 -> 30 [label="x"];
+	1 -> 4 [label="u"];
+	4 -> 30 [label="z"];
+	4 -> 30 [label="a"];
+	4 -> 2 [label="a"];
+
+	30[style=filled];
+
+}
