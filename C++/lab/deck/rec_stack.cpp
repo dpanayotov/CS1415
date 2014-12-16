@@ -226,6 +226,39 @@ void printway(const vector<pair<int, int> >& way)
 	printway(tail(way));
 }
 
+void span(Tree<pair<int, int> > tree, Tree<pair<int, int> >& currentTree, int x, int y)
+{
+	if(!correct(x,y))
+	{
+		return;
+	}
+	if(correct(x,y))
+	{
+		Tree<pair<int, int> > subTree;
+		subTree.setRoot(pair<int,int> (x,y));
+		tree.addSubTree(subTree);
+		maze[x][y] = 2;
+	}
+	span(subTree, x+1, y);
+	span(subTree, x-1, y);
+	span(subTree, x, y+1);
+	span(subTree, x, y-1);
+}
+
+Tree<pair<int, int> > spanningTree()
+{
+	Tree<pair<int, int> > st;
+	st.setRoot(pair<int, int> (0,0));
+	span(st, 0, 0);
+	return st;
+}
+
+ostream& operator<<(ostream& out, const pair<int, int>& p)
+{
+	out<<"("<<p.first<<", "<<p.second<<")"<<endl;
+	return out;
+}
+
 int main ()
 {
 	cout<<wayIter(0,0,4,4)<<endl;
