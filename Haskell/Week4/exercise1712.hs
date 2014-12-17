@@ -26,3 +26,6 @@ same::(Eq a) => [a] -> Bool
 same (x:xs) = allTrue $ map (\y -> x == y) xs
 
 map2 f = foldr (\x y -> f x : y) []
+
+join::String->[String]->String
+join delim (x:xs) = foldl (\acc y -> acc++delim++y) x xs
