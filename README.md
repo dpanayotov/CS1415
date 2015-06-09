@@ -1,1 +1,1 @@
-Exercises and homework during third semester (Computer Science '14/'15)
+Exercises and homework from the third semester (Computer Science '14/'15)
